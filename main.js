@@ -17,11 +17,12 @@ const aside=document.querySelector(".ocultar-orden");
 carrito.addEventListener("click",mostrarCarrito);
 
 
-
 function mostrarMobileMenu(){
     if(aside.classList.contains("ocultar-orden")){
+        product_show_details.classList.add("ocultar_detalles");
         mobile_menu.classList.toggle("ocultar-menu");
     }else{
+        product_show_details.classList.add("ocultar_detalles");
         aside.classList.add("ocultar-orden");
         mobile_menu.classList.toggle("ocultar-menu");
     }
@@ -29,8 +30,10 @@ function mostrarMobileMenu(){
 
 function mostrarCarrito(){
     if(mobile_menu.classList.contains("ocultar-menu")){
+        product_show_details.classList.add("ocultar_detalles");
         aside.classList.toggle("ocultar-orden");
     }else{
+        product_show_details.classList.add("ocultar_detalles");
         mobile_menu.classList.add("ocultar-menu");
         aside.classList.toggle("ocultar-orden");
     }
@@ -153,3 +156,16 @@ function llenarProductos(){
 
 }
 llenarProductos();
+const product_show_details=document.querySelector(".details");
+const product_details=document.querySelectorAll(".product-card");
+
+
+for(prod of product_details){
+    prod.addEventListener("click",()=>mostrarDetalle(prod));
+}
+
+function mostrarDetalle(prod){
+    foto=prod.firstChild;
+    product_show_details.querySelector(".img_details").src=foto.src;
+    product_show_details.classList.toggle("ocultar_detalles");
+}

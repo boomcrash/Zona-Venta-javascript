@@ -289,6 +289,7 @@ body{
 /*Menu MOVIL*/
 
 .mobile-menu{
+    background-color: var(--White);
     position: absolute;
     top: 54px;
     padding: 24px;
@@ -592,23 +593,40 @@ nav{
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 3px solid black;
+    border-radius: 40px;
 }
 
+
 .details{
+    background-color: white;
     width: 360px;
     padding-bottom: 24px;
     position: absolute;
+    left: 0;
     right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 555px;
+    border: 3px solid black;
+    border-radius: 40px;
 }
+.ocultar_detalles{
+    display: none;
+}
+
 
 .details > img:nth-child(1):hover{ 
     cursor: pointer;
+
 }
 
 .details > img:nth-child(1){ 
     position: absolute;
     top: 12px;
     left: 12px;
+
 
 }
 
@@ -617,7 +635,8 @@ nav{
     height: 360px;
     object-fit: cover;
     border-radius: 0 0  20px 20px;
-
+    border: 1px solid black;
+    border-radius: 40px;
 }
 
 .details-close {
